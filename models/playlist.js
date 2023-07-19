@@ -1,14 +1,14 @@
 const { v4: uuidv4 } = require('uuid');
 
 let playlist = [
-  { id: 1, 
+  { id: "1", 
     title: "Lemon Tree", 
     artist: "Fools Garden", 
     url: "https://p.scdn.co/mp3-preview/0ce51df079155a323b91642b9f7a19bdebfc6bc1?cid=0b297fa8a249464ba34f5861d4140e58",
     played: 10,
   },
   { 
-    id: 2, 
+    id: "2", 
     title: "I Love You 3000", 
     artist: "Stephanie Poetri", 
     url: "https://p.scdn.co/mp3-preview/0ce51df079155a323b91642b9f7a19bdebfc6bc1?cid=0b297fa8a249464ba34f5861d4140e58",
@@ -18,15 +18,6 @@ let playlist = [
 
 const getAllSongs = () => {
   return playlist.sort((a, b) => b.played - a.played);
-}
-
-const getSong = (songId) => {
-  const song = playlist.find((s) => s.id === songId);
-  if (!song) {
-    return null;
-  } else {
-    return song;
-  }
 }
 
 const addSong = (title, artist, url) => {
@@ -51,4 +42,4 @@ const playSong = (songId) => {
   }
 }
 
-module.exports = { playlist, getAllSongs, getSong, addSong, playSong }
+module.exports = { getAllSongs, addSong, playSong }
